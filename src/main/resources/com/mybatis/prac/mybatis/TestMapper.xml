@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.prac.mybatis.TestMapper">
+
+    <insert id="insert">
+        insert into test (joinName) values (#{joinName});
+    </insert>
+
+    <select id="list" resultType="String">
+        select * from test;
+    </select>
+
+    <select id="listOne" resultType="String">
+        select joinName from test where joinName = #{findName};
+    </select>
+
+    <update id="update" parameterType="String">
+        update test set joinName = #{updateName} where joinName = #{joinName};
+    </update>
+
+    <delete id="delete">
+        delete from test where joinName = #{joinName};
+    </delete>
+
+</mapper>
