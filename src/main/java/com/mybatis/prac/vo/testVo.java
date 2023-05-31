@@ -9,5 +9,4 @@ public class testVo {
 
     private String joinName;
 
-
 }

@@ -1,7 +1,7 @@
 package com.mybatis.prac.controller;
 
 import com.mybatis.prac.mybatis.TestMapper;
-import com.mybatis.prac.vo.testVo;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

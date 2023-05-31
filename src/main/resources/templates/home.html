@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#request").click(function(event) {
+            event.preventDefault(); // 폼의 기본 동작인 페이지 이동을 막습니다.
+
+            const MemberData = {
+                joinName: $("#joinNames").val()
+            };
+
+            $.ajax({
+                url: "/API/1",
+                type: "POST",
+                async: true,
+                data: JSON.stringify(MemberData),
+                contentType: 'application/json',
+                success: function(response) {
+                    alert("저장 성공");
+                },
+                error: function(error) {
+                    alert("저장 실패");
+                }
+            });
+        });
+    });
+</script>
 <body>
-<form th:action="@{/test/post}" method="post" >
+<form method="post" >
   <p>
-    <input  type="text" name="joinName" id="JoinName"   maxlength="20">
+    <input  type="text" id="joinNames"  maxlength="20">
   </p>
-
-    <button type="submit">회원가입</button>
-
+    <button type="submit" id="request" >회원가입</button>
 </form>
 </body>
 </html>

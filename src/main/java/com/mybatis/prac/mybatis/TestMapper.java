@@ -1,6 +1,7 @@
 package com.mybatis.prac.mybatis;
 
 
+
 import com.mybatis.prac.vo.testVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
